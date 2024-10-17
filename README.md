@@ -1,4 +1,4 @@
-# Emergency Notification System
+# Emergency Alert Hub
 
 > This system allows you to quickly and efficiently send notifications to a large number of recipients during emergency
 > situations.
