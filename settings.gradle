@@ -1,4 +1,4 @@
-rootProject.name = 'emergency-notification-system'
+rootProject.name = 'emergency-alert-hub'
 
 include 'security-service'
 include 'recipient-service'

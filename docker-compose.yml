@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   security-service-postgres:
     container_name: security-service-postgres
@@ -103,13 +102,13 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
   discovery-server:
-    image: v1acheslav/discovery-server:1.0.1
+    image: madebymikki/discovery-server:1.0.1
     restart: always
     ports:
       - '8761:8761'
 
   api-gateway:
-    image: v1acheslav/api-gateway:1.0.1
+    image: madebymikki/api-gateway:1.0.1
     restart: always
     ports:
       - '8080:8080'
@@ -119,7 +118,7 @@ services:
       - discovery-server
 
   security-service:
-    image: v1acheslav/security-service:1.0.5
+    image: madebymikki/security-service:1.0.5
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -129,7 +128,7 @@ services:
       - api-gateway
 
   recipient-service:
-    image: v1acheslav/recipient-service:1.0.3
+    image: madebymikki/recipient-service:1.0.3
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -141,7 +140,7 @@ services:
       - broker
 
   template-service:
-    image: v1acheslav/template-service:1.0.3
+    image: madebymikki/template-service:1.0.3
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -153,7 +152,7 @@ services:
       - broker
 
   notification-service:
-    image: v1acheslav/notification-service:1.0.3
+    image: madebymikki/notification-service:1.0.3
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -165,7 +164,7 @@ services:
       - broker
 
   sender-service:
-    image: v1acheslav/sender-service:1.0.3
+    image: madebymikki/sender-service:1.0.3
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -175,7 +174,7 @@ services:
       - broker
 
   file-service:
-    image: v1acheslav/file-service:1.0.1
+    image: madebymikki/file-service:1.0.1
     restart: always
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -184,7 +183,7 @@ services:
       - api-gateway
 
   telegram-bot-service:
-    image: v1acheslav/telegram-bot-service:1.0.1
+    image: madebymikki/telegram-bot-service:1.0.1
     restart: always
 
 volumes:
